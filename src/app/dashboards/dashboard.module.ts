@@ -3,9 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Routes, RouterModule } from '@angular/router';
 import { ChartsModule } from 'ng2-charts';
-import { Dashboard1Component } from './dashboard1/dashboard1.component';
-import { Dashboard2Component } from './dashboard2/dashboard2.component';
-import { Dashboard3Component } from './dashboard3/dashboard3.component';
+
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { DashboardRoutes } from './dashboard.routing';
 import { ChartistModule} from 'ng-chartist';
@@ -43,9 +41,7 @@ import { OrdersComponent } from './orders/orders.component';
     	RouterModule.forChild(DashboardRoutes)
     ],
 	declarations: [
-        Dashboard1Component,
-        Dashboard2Component,
-        Dashboard3Component,
+     
         IncomeCounterComponent,
         ProjectCounterComponent, 
         ProjectComponent, 
