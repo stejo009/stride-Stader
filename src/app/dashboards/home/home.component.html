@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="row">
+
+    <div class="col-md-12">
+        <project-counter></project-counter>  
+    </div>
+
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+               <h4 class="card-title">Line Area chart Example</h4>
+                <h6 class="card-subtitle">This is the simple data export from the json file and creating a Line chart</h6>
+               <div class="linearea" style="height:400px;">
+                  <x-chartist class="" [data]="lineChart1.data" [type]="lineChart1.type" [options]="lineChart1.options" [responsiveOptions]="lineChart1.responsiveOptions" [events]="lineChart1.events"> </x-chartist>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <app-doughnutchart></app-doughnutchart>
+    </div>
+    
+  </div>
+</div>

@@ -2,6 +2,19 @@ import { RouteInfo } from './sidebar.metadata';
 
 export const ROUTES: RouteInfo[] = [
     {
+        path: '', title: 'Treading Manager', icon: '', class: 'nav-small-cap', label: '', labelClass: '', extralink: true, submenu: []
+    },
+    
+       
+            { path: '/dashboard/Home', title: 'Dashboard', icon: 'mdi mdi-gauge', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/orders', title: 'Orders', icon: 'mdi mdi-cart', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/payment', title: 'Payments', icon: 'mdi mdi-currency-usd', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/grap', title: 'Graphics', icon: 'mdi-cart', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+        
+        
+    
+
+    {
         path: '', title: 'Personal', icon: '', class: 'nav-small-cap', label: '', labelClass: '', extralink: true, submenu: []
     },
     {
@@ -10,6 +23,8 @@ export const ROUTES: RouteInfo[] = [
             { path: '/dashboard/dashboard1', title: 'Modern', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
             { path: '/dashboard/dashboard2', title: 'Classic', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
             { path: '/dashboard/dashboard3', title: 'Analytical', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/grap', title: 'Graphics', icon: '', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+        
         ]
     },
     {

@@ -28,6 +28,9 @@ import { EarningComponent } from './dashboard-components/earning-report/earning-
 import { ActivityComponent } from './dashboard-components/activity-timeline/activity.component';
 import { GrapComponent } from './grap/grap.component';
 import { DoughnutchartComponent } from './doughnutchart/doughnutchart.component';
+import { HomeComponent } from './home/home.component';
+import { PaymentComponent } from './payment/payment.component';
+import { OrdersComponent } from './orders/orders.component';
 
 @NgModule({
 	imports: [
@@ -59,7 +62,10 @@ import { DoughnutchartComponent } from './doughnutchart/doughnutchart.component'
         EarningComponent,
         ActivityComponent,
         GrapComponent,
-        DoughnutchartComponent
+        DoughnutchartComponent,
+        HomeComponent,
+        PaymentComponent,
+        OrdersComponent
     ]
 })
 export class DashboardModule { }
