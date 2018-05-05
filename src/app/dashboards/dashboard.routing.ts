@@ -12,28 +12,28 @@ export const DashboardRoutes: Routes = [
   {
     path: '',
     children: [
-    {
-      path: 'dashboard1',
-      component: Dashboard1Component,
-      data: {
-        title: 'Modern Dashboard',
-        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'Modern Dashboard'}]
-      }
-    }, {
-      path: 'dashboard2',
-      component: Dashboard2Component,
-      data: {
-        title: 'Classic Dashboard',
-        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'Classic Dashboard'}]
-      }
-    }, {
-      path: 'dashboard3',
-      component: Dashboard3Component,
-      data: {
-        title: 'Analytical Dashboard',
-        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'Analytical Dashboard'}]
-      }
-    }, 
+    // {
+    //   path: 'dashboard1',
+    //   component: Dashboard1Component,
+    //   data: {
+    //     title: 'Modern Dashboard',
+    //     urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'Modern Dashboard'}]
+    //   }
+    // }, {
+    //   path: 'dashboard2',
+    //   component: Dashboard2Component,
+    //   data: {
+    //     title: 'Classic Dashboard',
+    //     urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'Classic Dashboard'}]
+    //   }
+    // }, {
+    //   path: 'dashboard3',
+    //   component: Dashboard3Component,
+    //   data: {
+    //     title: 'Analytical Dashboard',
+    //     urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'Analytical Dashboard'}]
+    //   }
+    // }, 
     {
       path: 'grap',
       component: GrapComponent,
@@ -46,7 +46,7 @@ export const DashboardRoutes: Routes = [
       path: 'Home',
       component: HomeComponent,
       data: {
-        title: 'Analytical Dashboard',
+        title: 'Dashboard',
         urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'home'}]
       }
     },
@@ -63,7 +63,7 @@ export const DashboardRoutes: Routes = [
       component: OrdersComponent,
       data: {
         title: 'Orders',
-        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'orders'}]
+        urls: [{title: 'Dashboard',url: 'dashboard'},{title: 'orders'}]
       }
     }
   ]
