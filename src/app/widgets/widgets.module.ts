@@ -10,10 +10,11 @@ const routes: Routes = [{
 	path: '',
 	data: {
         title: 'Widgets Page',
-        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'Widgets Page'}]
+        urls: [{title: 'Dashboard',url: '/dashboard/Home'},{title: 'Widgets Page'}]
     },
 	component: WidgetsComponent
 }];
+
 
 @NgModule({
 	imports: [

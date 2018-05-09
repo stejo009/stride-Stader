@@ -13,13 +13,7 @@ export class OrdersComponent implements OnInit {
   }
   
   ngOnInit() {
-    this.http.get('http://phplaravel-68825-317593.cloudwaysapps.com/get_orders').subscribe((data) => {
-    alert("testing");
-    let json:any = data;
-    console.log("jason:" + data);
-    this.ordersData = json;
-    console.log("data"+ this.ordersData);
-    });
+  
   }
 
 }

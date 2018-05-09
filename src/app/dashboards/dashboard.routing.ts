@@ -12,15 +12,15 @@ export const DashboardRoutes: Routes = [
     children: [
     
     {
-      path: 'grap',
+      path: 'order',
       component: GrapComponent,
       data: {
         title: 'Line Grap',
-        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'Grap'}]
+        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'Order'}]
       }
     }
     , {
-      path: 'Home',
+      path: 'home',
       component: HomeComponent,
       data: {
         title: 'Dashboard',

@@ -5,11 +5,11 @@ export const ROUTES: RouteInfo[] = [
         path: '', title: 'Treading Manager', icon: '', class: 'nav-small-cap', label: '', labelClass: '', extralink: true, submenu: []
     },
     
-       
-            { path: '/dashboard/Home', title: 'Dashboard', icon: 'mdi mdi-gauge', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
-            { path: '/dashboard/orders', title: 'Orders', icon: 'mdi mdi-cart', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+   
+    { path: '/dashboard/home', title: 'Dashboard', icon: 'mdi mdi-gauge', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/order', title: 'Orders', icon: 'mdi mdi-cart', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
             { path: '/dashboard/payment', title: 'Payments', icon: 'mdi mdi-currency-usd', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
-            { path: '/dashboard/grap', title: 'Sample Menu', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '#', title: 'Sample Menu', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] }
         
         
     
