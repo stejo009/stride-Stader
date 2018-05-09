@@ -4,6 +4,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
+import { LoginComponent } from './authentication/login/login.component';
+import { SigninComponent } from './signin/signin.component';
 
 export const routes: Routes = [
 {
@@ -24,6 +26,11 @@ export const routes: Routes = [
         // { path: 'sample-pages', loadChildren: './sample-pages/sample-pages.module#SamplePagesModule' }
     ]
 },
+{
+    path:'signin',
+    component:SigninComponent
+},
+
 {
     path: '',
     component: BlankComponent,

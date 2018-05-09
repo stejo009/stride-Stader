@@ -31,6 +31,20 @@ export class HomeComponent implements OnInit {
     }
 };
 
+    // PolarArea
+    public polarAreaChartLabels: string[] = [
+      'Download Sales',
+      'In-Store Sales',
+      'Mail Sales',
+      'Telesales',
+      'Corporate Sales'
+  ];
+  public polarAreaChartData: number[] = [300, 500, 100, 40, 120];
+  public polarAreaLegend: boolean = true;
+
+  public polarAreaChartType: string = 'polarArea';
+
+
   constructor() { }
 
   ngOnInit() {
