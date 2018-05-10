@@ -29,6 +29,7 @@ import { DoughnutchartComponent } from './doughnutchart/doughnutchart.component'
 import { HomeComponent } from './home/home.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrdersComponent } from './orders/orders.component';
+import { RestclientService } from '../restclient/restclient.service';
 
 @NgModule({
 	imports: [
@@ -39,6 +40,9 @@ import { OrdersComponent } from './orders/orders.component';
         ChartistModule,
         Ng2SmartTableModule,
     	RouterModule.forChild(DashboardRoutes)
+    ],
+    providers: [
+        RestclientService
     ],
 	declarations: [
      

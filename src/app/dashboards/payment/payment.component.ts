@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { RestclientService } from '../../restclient/restclient.service';
 @Component({
   selector: 'app-payment',
   templateUrl: './payment.component.html',
@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serverService: RestclientService) { }
 
   ngOnInit() {
+    console.log("Inside the payment onInit");
+   this.serverService.getPaymentData();
+   let data = this.serverService.alldata;
+    console.log("Data inside the payment components :"+data);
   }
 
 }

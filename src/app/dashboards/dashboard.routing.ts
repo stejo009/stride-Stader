@@ -3,9 +3,8 @@ import { Routes } from '@angular/router';
 
 import { GrapComponent } from './grap/grap.component';
 import { HomeComponent } from './home/home.component';
-import { OrdersComponent } from './orders/orders.component';
 import { PaymentComponent } from './payment/payment.component';
-
+import { OrdersComponent } from './orders/orders.component';
 export const DashboardRoutes: Routes = [
   {
     path: '',
@@ -36,13 +35,14 @@ export const DashboardRoutes: Routes = [
       }
     },
     {
-      path: 'orders',
-      component: OrdersComponent,
-      data: {
-        title: 'Orders',
-        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'orders'}]
-      }
-    }
+     path: 'orders',
+     component: OrdersComponent,
+     data: {
+       title: 'Orders',
+       urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'orders'}]
+     }
+   }
+    
   ]
   }
 ];
