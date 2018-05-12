@@ -21,6 +21,8 @@ export interface Chart {
 })
 export class HomeComponent implements OnInit {
 
+  
+// Line Area Chart
   lineChart1: Chart = {
     type: 'Line',
     data: data['LineWithArea'],
