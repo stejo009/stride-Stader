@@ -12,13 +12,21 @@ import { Observable } from 'rxjs/Observable';
 export class OrdersComponent implements OnInit {
 
   constructor(private http:Http, private serverService: RestclientService) { }
-  
+  alldata;
   
   ngOnInit() {
   
   }
+
   onOrdersData(){
-    console.log("Button Clicked");
-    this.serverService.getOrdersData();
+      console.log("Button Clicked");
+      this.serverService.getOrdersData().subscribe(data=>{
+      this.alldata = data.json();
+      console.log(this.alldata);  
+      }, err=>{
+        console.error("Error = " + err);
+      }, ()=>{
+        console.log("Req completed!");
+      });
   }
 }
