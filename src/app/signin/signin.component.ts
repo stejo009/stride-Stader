@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
-import { RestclientService } from '../restclient/restclient.service';
+// import { RestclientService } from '../restclient/restclient.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -12,27 +14,40 @@ export class SigninComponent implements OnInit {
   name;
   pass;
   responseMessage;
-  constructor(private RestclientService:RestclientService) { }
-
+ 
+  constructor(private LoginServices:LoginService, private router:Router) {    
+  }
+  
   ngOnInit() {
   }
 
   onLoggedin(){
     // get username and password from user 
     let uname = this.username;
-    let pass = this.password;
+    let upass = this.password;
     console.log("Username:" + uname);
-    console.log("Password:" + pass);
-    let body = {
-    
+    console.log("Password:" + upass);
+    let body = {   
       username : uname,
-      password : pass
+      password : upass
   }
-    
+  if(uname == 'admin' && upass == 'admin') {
+    console.log("username password matched");
+    this.LoginServices.setUserLoggedIn();
+    this.router.navigate(['dashboard/home']);
+  }
+  }
+}
+
+
+
+
+ /*
+
   this.RestclientService.execPOSTRequest(body).subscribe(
       data => {
         
-          //disable progress bar
+          
 
           this.responseMessage = data.json();
           console.log('SERVER RESPONSE: ' , data.toString);
@@ -61,7 +76,4 @@ export class SigninComponent implements OnInit {
       () => {
           console.log('Login service completed');             
       }
-  );
-
-  }
-}
+  );*/

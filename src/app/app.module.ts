@@ -26,7 +26,8 @@ import { OrdersComponent } from './admindashboard/orders/orders.component';
 import { PaymentComponent } from './admindashboard/payment/payment.component';
 import { SigninComponent } from './signin/signin.component';
 import { RestclientService } from './restclient/restclient.service';
-
+import { AuthguardGuard } from './authguard.guard';
+import { LoginService } from './services/login.service';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 2,
@@ -62,10 +63,13 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   ],
   providers: [
     RestclientService,
+    LoginService,
+    AuthguardGuard,
       {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG
     },
+    
     {
     provide: LocationStrategy,
     useClass: HashLocationStrategy

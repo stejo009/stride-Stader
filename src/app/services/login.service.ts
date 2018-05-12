@@ -3,15 +3,20 @@ import { RestclientService } from '../restclient/restclient.service';
 
 @Injectable()
 export class LoginService {
+  private isUserLoggedIn;
+  constructor() {
+    this.isUserLoggedIn = false;
+   }
 
-  constructor() { }
-  
-  // postSigninData(username, password){
-  //   console.log(" Inside login services Username:" + username + "password" + password);
-  // }  
-  // userid;
-  // postSigninData(body){
-  //   this.userid = body;
-  //  return  this.RestclientService.execPOSTRequest(this.userid);
-  // }
+  setUserLoggedIn(){
+  this.isUserLoggedIn = true;
+  console.log("set user login in valur :" + true);
+  }
+
+  getUserLoggedIn() {
+    console.log("login boolian:"+this.isUserLoggedIn);
+  	return this.isUserLoggedIn;
+  }
+
 }
+

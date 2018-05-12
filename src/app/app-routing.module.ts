@@ -9,28 +9,20 @@ import { SigninComponent } from './signin/signin.component';
 
 export const routes: Routes = [
 {
+     path: '', redirectTo: '/signin', pathMatch: 'full' 
+},
+{
     path: '',
     component: FullComponent,
     children: [
-        { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
+        { path: '', redirectTo: '/signin', pathMatch: 'full' },
         { path: 'dashboard', loadChildren: './dashboards/dashboard.module#DashboardModule' },
-        // { path: 'starter', loadChildren: './starter/starter.module#StarterModule' },
-        // { path: 'component', loadChildren: './component/component.module#ComponentsModule' },
-        // { path: 'icons', loadChildren: './icons/icons.module#IconsModule' },
-        // { path: 'forms', loadChildren: './form/forms.module#FormModule' },
-        // { path: 'tables', loadChildren: './table/tables.module#TablesModule' },
-        // { path: 'charts', loadChildren: './charts/charts.module#ChartModule' },
-        // { path: 'widgets', loadChildren: './widgets/widgets.module#WidgetsModule' },
-        // { path: 'extra-component', loadChildren: './extra-component/extra-component.module#ExtraComponentsModule' },
-        { path: 'apps', loadChildren: './apps/apps.module#AppsModule' },
-        // { path: 'sample-pages', loadChildren: './sample-pages/sample-pages.module#SamplePagesModule' }
-    ]
+        { path: 'apps', loadChildren: './apps/apps.module#AppsModule' },    ]
 },
 {
     path:'signin',
     component:SigninComponent
 },
-
 {
     path: '',
     component: BlankComponent,

@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+import { AuthguardGuard } from '../authguard.guard';
 
 
 import { GrapComponent } from './grap/grap.component';
@@ -12,6 +13,7 @@ export const DashboardRoutes: Routes = [
     
     {
       path: 'order',
+      canActivate: [AuthguardGuard],
       component: GrapComponent,
       data: {
         title: 'Line Grap',
@@ -20,6 +22,7 @@ export const DashboardRoutes: Routes = [
     }
     , {
       path: 'home',
+      canActivate: [AuthguardGuard],
       component: HomeComponent,
       data: {
         title: 'Dashboard',
@@ -28,6 +31,7 @@ export const DashboardRoutes: Routes = [
     },
      {
       path: 'payment',
+      canActivate: [AuthguardGuard],
       component: PaymentComponent,
       data: {
         title: 'Payments',
@@ -36,6 +40,7 @@ export const DashboardRoutes: Routes = [
     },
     {
      path: 'orders',
+     canActivate: [AuthguardGuard],
      component: OrdersComponent,
      data: {
        title: 'Orders',
