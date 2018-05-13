@@ -42,7 +42,6 @@ export class RestclientService {
    
   //  post username and password request
   execPOSTRequest(body){
-    return this.http.post('http://localhost:3000/user', this.options, JSON.stringify(body));
+    return this.http.post('http://phpstack-68825-403367.cloudwaysapps.com/testApi.php',JSON.stringify(body));
    }
-
 }//Class Completed

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../services/login.service';
 // import { RestclientService } from '../restclient/restclient.service';
 import { Router } from '@angular/router';
+import { RestclientService } from '../restclient/restclient.service';
 
 @Component({
   selector: 'app-signin',
@@ -11,11 +12,10 @@ import { Router } from '@angular/router';
 export class SigninComponent implements OnInit {
   username :string= "";
   password :string= "";
-  name;
-  pass;
   responseMessage;
+  serverResponse;
  
-  constructor(private LoginServices:LoginService, private router:Router) {    
+  constructor(private LoginServices:LoginService, private RestclientService:RestclientService, private router:Router) {    
   }
   
   ngOnInit() {
@@ -31,41 +31,15 @@ export class SigninComponent implements OnInit {
       username : uname,
       password : upass
   }
-  if(uname == 'admin' && upass == 'admin') {
-    console.log("username password matched");
-    this.LoginServices.setUserLoggedIn();
-    this.router.navigate(['dashboard/home']);
-  }
-  }
-}
-
-
-
-
- /*
-
+  // this function send request to restcli for send username and password
   this.RestclientService.execPOSTRequest(body).subscribe(
       data => {
-        
-          
-
           this.responseMessage = data.json();
           console.log('SERVER RESPONSE: ' , data.toString);
           console.log('SERVER RESPONSE: ' , this.responseMessage);
-
-          // this.auth = StringUtils.getAuthHeader(this.username, encryptedPass);
-          // localStorage.setItem("AUTH", this.auth);
-          // localStorage.setItem("USERNAME", this.username);
-          
-          // this.authService.login();
-
-          // dialogRef.close();
-
-          // Get the redirect URL from our auth service
-          // If no redirect has been set, use the default
-          // let redirect = this.authService.redirectUrl ? this.authService.redirectUrl : 'dashboard';
-
-          // this.navigate(redirect);
+          // if this function is execute that means password corret and response execute
+          this.serverResponse = true;
+          this.authentication(this.serverResponse);
       },
       err => {
         //show user authentication is failed
@@ -76,4 +50,21 @@ export class SigninComponent implements OnInit {
       () => {
           console.log('Login service completed');             
       }
-  );*/
+  ); 
+  }
+  
+// if response is come form server then password is correct
+  authentication(serverResponse){
+    if(this.username=="admin" && this.password=="admin") {  
+      console.log("username password matched");
+      this.LoginServices.setUserLoggedIn();
+      this.router.navigate(['dashboard/home']);
+    }
+    else{
+      alert("Please enter Valid username and password");
+    }
+  }
+}//class completed
+
+
+

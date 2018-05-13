@@ -1,6 +1,7 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { NgbModal, ModalDismissReasons, NgbPanelChangeEvent, NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar'; 
+import { LoginService } from '../../services/login.service';
 @Component({
   selector: 'ap-navigation',
   templateUrl: './navigation.component.html'
@@ -8,7 +9,7 @@ import { PerfectScrollbarConfigInterface } from 'ngx-perfect-scrollbar';
 export class NavigationComponent implements AfterViewInit {
 	name:string;
   	public config: PerfectScrollbarConfigInterface = {};
-  	constructor(private modalService: NgbModal) {
+  	constructor(private modalService: NgbModal, private LoginService:LoginService) {
     	
     }
 
@@ -87,5 +88,9 @@ export class NavigationComponent implements AfterViewInit {
         
         
         $("body").trigger("resize");
+    }
+
+    onLogedOut(){
+      this.LoginService.isLogout();
     }
 }

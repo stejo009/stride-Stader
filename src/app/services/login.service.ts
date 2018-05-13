@@ -13,6 +13,10 @@ export class LoginService {
   console.log("set user login in valur :" + true);
   }
 
+  isLogout(){
+    this.isUserLoggedIn = false;
+  }
+
   getUserLoggedIn() {
     console.log("login boolian:"+this.isUserLoggedIn);
   	return this.isUserLoggedIn;

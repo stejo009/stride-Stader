@@ -3,6 +3,7 @@ import { NgbModal} from '@ng-bootstrap/ng-bootstrap';
 import { ROUTES } from './menu-items';
 import { RouteInfo } from "./sidebar.metadata";
 import { Router, ActivatedRoute } from "@angular/router";
+import { LoginService } from '../../services/login.service';
 declare var $: any;
 @Component({
   selector: 'ap-sidebar',
@@ -34,7 +35,7 @@ export class SidebarComponent implements OnInit {
     }
     
     constructor(private modalService: NgbModal, private router: Router,
-        private route: ActivatedRoute) {
+        private route: ActivatedRoute, private LoginService:LoginService) {
         
     } 
     // End open close
@@ -55,4 +56,8 @@ export class SidebarComponent implements OnInit {
         });
         
     }
+
+    onLogedOut(){
+        this.LoginService.isLogout();
+      }
 }
