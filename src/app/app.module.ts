@@ -28,6 +28,7 @@ import { SigninComponent } from './signin/signin.component';
 import { RestclientService } from './restclient/restclient.service';
 import { AuthguardGuard } from './authguard.guard';
 import { LoginService } from './services/login.service';
+import { SignupComponent } from './signup/signup.component';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 2,
@@ -48,6 +49,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     OrdersComponent,
     PaymentComponent,
     SigninComponent,
+    SignupComponent,
    
   ],
   imports: [

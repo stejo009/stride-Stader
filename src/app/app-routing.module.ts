@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
 import { FullComponent } from './layouts/full/full.component';
 import { BlankComponent } from './layouts/blank/blank.component';
 import { LoginComponent } from './authentication/login/login.component';
 import { SigninComponent } from './signin/signin.component';
+import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
 {
@@ -23,6 +23,11 @@ export const routes: Routes = [
     path:'signin',
     component:SigninComponent
 },
+{
+    path: 'signup',
+    component: SignupComponent
+},
+
 {
     path: '',
     component: BlankComponent,

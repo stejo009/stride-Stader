@@ -30,6 +30,8 @@ import { HomeComponent } from './home/home.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrdersComponent } from './orders/orders.component';
 import { RestclientService } from '../restclient/restclient.service';
+import { StadiumsComponent } from './stadiums/stadiums.component';
+import { PlayersComponent } from './players/players.component';
 
 @NgModule({
 	imports: [
@@ -65,7 +67,9 @@ import { RestclientService } from '../restclient/restclient.service';
         DoughnutchartComponent,
         HomeComponent,
         PaymentComponent,
-        OrdersComponent
+        OrdersComponent,
+        StadiumsComponent,
+        PlayersComponent
     ]
 })
 export class DashboardModule { }

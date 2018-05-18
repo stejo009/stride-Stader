@@ -5,11 +5,11 @@ import{ Http, Headers,RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
-  selector: 'app-payment',
-  templateUrl: './payment.component.html',
-  styleUrls: ['./payment.component.scss']
+  selector: 'app-players',
+  templateUrl: './players.component.html',
+  styleUrls: ['./players.component.css']
 })
-export class PaymentComponent implements OnInit {
+export class PlayersComponent implements OnInit {
 
 
   constructor(private http:Http, private serverService: RestclientService) { }
@@ -20,6 +20,7 @@ export class PaymentComponent implements OnInit {
     this.serverService.getPlayersData().subscribe(data=>{
     this.alldata = data.json();
     console.log(this.alldata.stadiums);  
+    this.displayPlayers();
     }, err=>{
       console.error("Error = " + err);
     }, ()=>{
@@ -28,7 +29,7 @@ export class PaymentComponent implements OnInit {
 }
   
 
-  onOrdersData(){
+displayPlayers(){
 this.alldata;
 this.stadium = this.alldata.stadiums;    
   }

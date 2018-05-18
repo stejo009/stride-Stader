@@ -6,6 +6,8 @@ import { GrapComponent } from './grap/grap.component';
 import { HomeComponent } from './home/home.component';
 import { PaymentComponent } from './payment/payment.component';
 import { OrdersComponent } from './orders/orders.component';
+import { PlayersComponent } from './players/players.component';
+import { StadiumsComponent } from './stadiums/stadiums.component';
 export const DashboardRoutes: Routes = [
   {
     path: '',
@@ -46,7 +48,25 @@ export const DashboardRoutes: Routes = [
        title: 'Orders',
        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'orders'}]
      }
-   }
+   },
+   {
+    path: 'players',
+    canActivate: [AuthguardGuard],
+    component: PlayersComponent,
+    data: {
+      title: 'Players',
+      urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'players'}]
+    }
+  },
+  {
+    path: 'stadiums',
+    canActivate: [AuthguardGuard],
+    component: StadiumsComponent,
+    data: {
+      title: 'Stadium',
+      urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'stadium'}]
+    }
+  }
     
   ]
   }

@@ -13,20 +13,24 @@ export class OrdersComponent implements OnInit {
 
   constructor(private http:Http, private serverService: RestclientService) { }
   alldata;
-  
+  stadium;
   ngOnInit() {
+    console.log("Button Clicked");
+    this.serverService.getStadiumData().subscribe(data=>{
+    this.alldata = data.json();
+    console.log(this.alldata.stadiums);  
+    }, err=>{
+      console.error("Error = " + err);
+    }, ()=>{
+      console.log("Req completed!");
+    });
+}
   
-  }
 
   onOrdersData(){
-      console.log("Button Clicked");
-      this.serverService.getOrdersData().subscribe(data=>{
-      this.alldata = data.json();
-      console.log(this.alldata);  
-      }, err=>{
-        console.error("Error = " + err);
-      }, ()=>{
-        console.log("Req completed!");
-      });
+this.alldata;
+this.stadium = this.alldata.stadiums;    
   }
+
+
 }

@@ -55,7 +55,7 @@ export class SigninComponent implements OnInit {
   
 // if response is come form server then password is correct
   authentication(serverResponse){
-    if(this.username=="admin" && this.password=="admin") {  
+    if(serverResponse == true) {  //this.username=="admin" && this.password=="admin"
       console.log("username password matched");
       this.LoginServices.setUserLoggedIn();
       this.router.navigate(['dashboard/home']);

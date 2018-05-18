@@ -20,8 +20,13 @@ export class RestclientService {
     this.options = new RequestOptions({headers: headers});
    }
    
-  //  this function send request to ORDER Request server for Orders Data
- getOrdersData(){
+// getting all stadium data
+ getStadiumData(){
+    console.log("inside the client request functions");
+    return  this.http.get("http://phplaravel-68825-370136.cloudwaysapps.com/api/allStadiums");
+   }
+// getting all players data
+   getPlayersData(){
     console.log("inside the client request functions");
     return  this.http.get("http://phplaravel-68825-370136.cloudwaysapps.com/api/allStadiums");
    }

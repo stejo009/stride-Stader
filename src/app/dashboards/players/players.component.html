@@ -1,15 +1,14 @@
-<button (click)="onOrdersData()" class="btn btn-primary">CLick</button>
-<h4>Stadiums</h4>
+<h4>Players</h4>
 <div class="row">
   <div class="col-4" *ngFor="let data of stadium">
       <div class="card">
           <div class="card-body">
-              <img src = "https://d1u4oo4rb13yy8.cloudfront.net/article/54089-dtfgxjmbef-1490098402.jpg">
+              <img src = "https://statics.sportskeeda.com/wp-content/uploads/2017/02/632786580-1487909602-800.jpg">
              <h6><b>{{data.stadium_name}}</b></h6>
               <p>Location:{{data.stadium_address}}</p>
               <p>Pitch type:{{data.pitch_type}}</p>
               <p>Ground type:{{data.ground_type}}</p>
-              <button class="btn btn-primary">Book stadium</button>
+              <button class="btn btn-primary">Add Fiends</button>
           </div>
       </div>
   </div>
