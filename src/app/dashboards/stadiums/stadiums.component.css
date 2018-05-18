@@ -9,4 +9,10 @@ li{
     cursor: pointer;
     padding: 2%;
     padding-left: 4%;
+    
+}
+
+li:hover{
+    color: blueviolet;
+    
 }

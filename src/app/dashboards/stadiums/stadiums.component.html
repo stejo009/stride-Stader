@@ -4,15 +4,18 @@
     <div class="col-md-3">
         <div class="card">
             <div class="card-body">
-                <ul> Filter<hr>
+                <ul type="none"> Filter<hr>
                     <li>All Games</li>
                     <li *ngFor = " let games of game" (click)="onFilterGame(games)"> {{games}} </li>
                 </ul>
-                <ul> Pitch Type<hr>
+                <ul type="none"> Pitch Type<hr>
                     <li *ngFor = " let pitch of pitch_type" (click)="onFilterPitch(pitch)"> {{pitch}} </li>
                 </ul>
-                <ul>
-                    <li *ngFor = " let pitch of pitch_type" (click)="onFilterPitch(pitch)" > {{pitch}}</li>
+                <ul type="none">City<hr>
+                    <li *ngFor = " let cityname of city" (click)="onFilterCity(cityname)" > {{cityname}}</li>
+                </ul>
+                <ul type="none"><br>
+                    <li ><button class="btn btn-primary">Reset Filter</button></li>
                 </ul>
             </div>
         </div>
@@ -27,6 +30,7 @@
                             <img src = "https://d1u4oo4rb13yy8.cloudfront.net/article/54089-dtfgxjmbef-1490098402.jpg">
                             <h6><b>{{data.stadium_name}}</b></h6>
                             <p>Location:{{data.stadium_address}}</p>
+                            <p>Sport{{data.name}}</p>
                             <p>Pitch type:{{data.pitch_type}}</p>
                             <p>Ground type:{{data.ground_type}}</p>
                             <button class="btn btn-primary">Book stadium</button>

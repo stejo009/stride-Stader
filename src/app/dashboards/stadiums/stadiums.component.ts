@@ -17,7 +17,7 @@ export class StadiumsComponent implements OnInit {
   newdata=[];
   game = ['Football', 'Cricket', 'Vollyball', 'Badminton', 'Tenes', 'Golf'];
   pitch_type = ['Indoor1', 'Outdoor2'];
-  
+  city=['Dubai', 'India', 'Japan', 'France', 'London'];
   constructor(private http:Http, private serverService: RestclientService) { }
 
  
@@ -61,6 +61,10 @@ public onFilterPitch(filter:string){
        
     }
 }
+this.stadium=[];
+this.stadium.push(this.newdata);
+console.log("filterd data");
+console.log(this.stadium);
 
 }
 
