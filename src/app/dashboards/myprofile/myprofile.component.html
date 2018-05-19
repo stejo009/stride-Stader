@@ -1,0 +1,174 @@
+<div class="row">
+        <div class="col-md-4">
+                <div class="card">
+                  <div class="card-body">
+                      <div class="d-flex flex-row">
+                          <div class=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Saina_Nehwal_in_2011.jpg/220px-Saina_Nehwal_in_2011.jpg" alt="user" class="img-circle" width="200"></div>
+                          <div class="p-l-20">
+                              <h3 class="font-medium username">{{myprofile.name}}</h3>
+                              <h6>{{myprofile.email}}</h6>
+                              <button class="btn btn-success"><i class="ti-plus"></i> Edit Profile</button>
+                          </div>
+                      </div>
+                      <div class="row m-t-40">
+                          <div class="col b-r">
+                              <h2 class="font-light">100</h2>
+                              <h6>Friends</h6></div>
+                          <div class="col b-r">
+                              <h2 class="font-light">03</h2>
+                              <h6>Games</h6></div>
+                          <div class="col">
+                              <h2 class="font-light">145</h2>
+                              <h6>Tasks</h6></div>
+                      </div>
+                  </div>
+                  <div>
+                      <hr>
+                      
+                  </div>
+                  <div class="card-body">
+                      <p class="text-center aboutscroll">
+                          Lorem ipsum dolor sit ametetur adipisicing elit, sed do eiusmod tempor incididunt adipisicing elit.
+                      </p>
+                      <ul class="list-icons d-flex flex-item text-center">
+                          <li class="col"><a href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Website"><i class="fa fa-globe font-20"></i></a></li>
+                          <li class="col"><a href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="twitter"><i class="fa fa-twitter font-20"></i></a></li>
+                          <li class="col"><a href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Facebook"><i class="fa fa-facebook-square font-20"></i></a></li>
+                          <li class="col"><a href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Youtube"><i class="fa fa-youtube-play font-20"></i></a></li>
+                          <li class="col"><a href="javascript:void(0)" data-toggle="tooltip" title="" data-original-title="Linkd-in"><i class="fa fa-linkedin-square font-20"></i></a></li>
+                      </ul>
+                  </div>
+                </div>
+              </div>
+
+
+              <  <div class="col-md-6">
+        <div class="card">
+            <div class="card-body">
+                <h3 class="card-title">Personal information</h3>
+                <h6 class="card-subtitle">manage your profiles</h6>
+                <ngb-tabset type="pills">
+                  <ngb-tab title="Edit Profile">
+                    <ng-template ngbTabContent>
+                        
+                            <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="card card-body">
+                                            <h4 class="card-title">Edit Personal information</h4>
+                                            <form class="form-horizontal m-t-40">
+                                                <div class="form-group">
+                                                    <label>edit name <span class="help"> </span></label>
+                                                    <input type="text" class="form-control" value="{{myprofile.name}}" name="{{myprofile.name}}">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="example-email">Email <span class="help"> e.g. "example@gmail.com"</span></label>
+                                                    <input type="email" id="example-email" name="example-email" value="{{myprofile.email}}" class="form-control" placeholder="Email">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Password</label>
+                                                    <input type="password" class="form-control" value="password">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>City</label>
+                                                    <input type="text" class="form-control" placeholder="city" value="city">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>About me</label>
+                                                    <textarea class="form-control" rows="5"></textarea>
+                                                </div>
+                                               
+                                                <!-- <div class="form-group row p-t-20">
+                                                        
+                                                    <div class="col-sm-4">
+                                                            <label>Sports</label><br>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck1">
+                                                            <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck2">
+                                                            <label class="custom-control-label" for="customCheck2">Check this custom checkbox</label>
+                                                        </div>
+                                                        <div class="custom-control custom-checkbox">
+                                                            <input type="checkbox" class="custom-control-input" id="customCheck3">
+                                                            <label class="custom-control-label" for="customCheck3">Check this custom checkbox</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4">
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio1">Toggle this custom radio</label>
+                                                        </div>
+                                                        <div class="custom-control custom-radio">
+                                                            <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
+                                                            <label class="custom-control-label" for="customRadio2">Toggle this custom radio</label>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div class="form-group">
+                                                    <label>Edit profile</label>
+                                                    <select class="custom-select col-12" id="inlineFormCustomSelect2">
+                                                        <option selected>Choose...</option>
+                                                        <option value="1">One</option>
+                                                        <option value="2">Two</option>
+                                                        <option value="3">Three</option>
+                                                    </select>
+                                                </div> -->
+                                                <div class="form-group">
+                                                    <label>Edit profile</label>
+                                                    <input type="file" class="form-control" id="exampleInputFile" aria-describedby="fileHelp">
+                                                </div>
+                                                <!-- <div class="form-group">
+                                                    <label>Upload your profile</label>
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">Upload</span>
+                                                        </div>
+                                                        <div class="custom-file">
+                                                            <input type="file" class="custom-file-input" id="inputGroupFile01">
+                                                            <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+                                                        </div>
+                                                    </div>
+                                                </div> -->
+                                                <!-- <div class="form-group">
+                                                    <label>Helping text</label>
+                                                    <input type="text" class="form-control" placeholder="Helping text">
+                                                    <span class="help-block"><small>A block of help text that breaks onto a new line and may extend beyond one line.</small></span> </div>  --> 
+                                                    <button class="btn btn-primary" (click)="onsubmit()">Save</button>
+                                                    <button type="Reset" class="btn btn-primary">Cancel</button>                                                    
+                                         </form> 
+                                        </div>
+                                    </div>
+                                </div>
+
+                                
+    
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab>
+                    <ng-template ngbTabTitle><b>Friends</b></ng-template>
+                    <ng-template ngbTabContent>
+                      <p  class="p-t-20">Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table
+                      craft beer twee. Qui photo booth letterpress, commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl
+                      cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia
+                      yr, vero magna velit sapiente labore stumptown. Vegan fanny pack odio cillum wes anderson 8-bit, sustainable jean
+                      shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero
+                      sint qui sapiente accusamus tattooed echo park.</p>
+                    </ng-template>
+                  </ngb-tab>
+                  <ngb-tab title="My Booking" >
+                    <ng-template ngbTabContent>
+                      <p  class="p-t-20">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth
+                      master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh
+                      dreamcatcher synth. Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum
+                      iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                    </ng-template>
+                  </ngb-tab>
+                </ngb-tabset>
+  			</div>
+        </div>
+    </div>
+
+
+</div>
+    

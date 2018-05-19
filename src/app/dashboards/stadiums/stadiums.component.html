@@ -1,18 +1,18 @@
 <h4>Stadiums</h4>
-<div class="row">
+<div class="row">   
     <!-- filter div start -->
     <div class="col-md-3">
         <div class="card">
             <div class="card-body">
                 <ul type="none"> Filter<hr>
-                    <li>All Games</li>
-                    <li *ngFor = " let games of game" (click)="onFilterGame(games)"> {{games}} </li>
+                    <li (click)="ngOnInit()">All Games </li>
+                    <li class="checkbox" *ngFor="let data of cloneddata" (change)="onFilterGame(data.name)"> <input type="checkbox" value="">{{data.name}} </li>
                 </ul>
                 <ul type="none"> Pitch Type<hr>
-                    <li *ngFor = " let pitch of pitch_type" (click)="onFilterPitch(pitch)"> {{pitch}} </li>
+                    <li *ngFor = " let data of pitchtype" (click)="onFilterPitch(data.id)"> {{data.pitch_type}} </li>
                 </ul>
                 <ul type="none">City<hr>
-                    <li *ngFor = " let cityname of city" (click)="onFilterCity(cityname)" > {{cityname}}</li>
+                    <li *ngFor = " let cityname of city" (click)="onFilterCity(cityname.id)" > {{cityname.name}}</li>
                 </ul>
                 <ul type="none"><br>
                     <li ><button class="btn btn-primary">Reset Filter</button></li>
@@ -24,7 +24,7 @@
         <!-- all stadiums -->
         <div class="col-md-9">
             <div class="row">
-                <div class="col-4" *ngFor="let data of stadium">
+                <div class="col-4" *ngFor="let data of pagedItems">
                     <div class="card">
                         <div class="card-body">
                             <img src = "https://d1u4oo4rb13yy8.cloudfront.net/article/54089-dtfgxjmbef-1490098402.jpg">
@@ -38,6 +38,28 @@
                     </div>
                 </div>
             </div>
+
+            <ul *ngIf="pager.pages && pager.pages.length" class="pagination">
+                    <li [ngClass]="{disabled:pager.currentPage === 1}">
+                        <a (click)="setPage(1)">First</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === 1}">
+                        <a (click)="setPage(pager.currentPage - 1)">Previous</a>
+                    </li>
+                    <li *ngFor="let page of pager.pages" [ngClass]="{active:pager.currentPage === page}">
+                        <a (click)="setPage(page)">{{page}}</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                        <a (click)="setPage(pager.currentPage + 1)">Next</a>
+                    </li>
+                    <li [ngClass]="{disabled:pager.currentPage === pager.totalPages}">
+                        <a (click)="setPage(pager.totalPages)">Last</a>
+                    </li>
+                </ul>
+
+
         </div>
         <!-- all stadium complted --> 
+
+       
 </div>

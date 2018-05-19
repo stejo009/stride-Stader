@@ -30,6 +30,12 @@ export class RestclientService {
     console.log("inside the client request functions");
     return  this.http.get("http://phplaravel-68825-370136.cloudwaysapps.com/api/allStadiums");
    }
+   
+// get profile data of user
+   getMyprofileData(){
+     return  this.http.get("http://phplaravel-68825-370136.cloudwaysapps.com/api/editProfile");
+
+   }
 
 // Send get request for client payments data
   getPaymentData(){

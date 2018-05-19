@@ -29,6 +29,7 @@ import { RestclientService } from './restclient/restclient.service';
 import { AuthguardGuard } from './authguard.guard';
 import { LoginService } from './services/login.service';
 import { SignupComponent } from './signup/signup.component';
+import { PagerserviceService } from './services/pagerservice.service';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 2,
@@ -67,6 +68,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     RestclientService,
     LoginService,
     AuthguardGuard,
+    PagerserviceService,
       {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG

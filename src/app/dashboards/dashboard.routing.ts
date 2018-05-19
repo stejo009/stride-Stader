@@ -8,6 +8,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { OrdersComponent } from './orders/orders.component';
 import { PlayersComponent } from './players/players.component';
 import { StadiumsComponent } from './stadiums/stadiums.component';
+import { MyprofileComponent } from './myprofile/myprofile.component';
 export const DashboardRoutes: Routes = [
   {
     path: '',
@@ -15,7 +16,7 @@ export const DashboardRoutes: Routes = [
     
     {
       path: 'order',
-      canActivate: [AuthguardGuard],
+      // canActivate: [AuthguardGuard],
       component: GrapComponent,
       data: {
         title: 'Line Grap',
@@ -24,7 +25,7 @@ export const DashboardRoutes: Routes = [
     }
     , {
       path: 'home',
-      canActivate: [AuthguardGuard],
+      // canActivate: [AuthguardGuard],
       component: HomeComponent,
       data: {
         title: 'Dashboard',
@@ -33,7 +34,7 @@ export const DashboardRoutes: Routes = [
     },
      {
       path: 'payment',
-      canActivate: [AuthguardGuard],
+      // canActivate: [AuthguardGuard],
       component: PaymentComponent,
       data: {
         title: 'Payments',
@@ -42,7 +43,7 @@ export const DashboardRoutes: Routes = [
     },
     {
      path: 'orders',
-     canActivate: [AuthguardGuard],
+    //  canActivate: [AuthguardGuard],
      component: OrdersComponent,
      data: {
        title: 'Orders',
@@ -51,7 +52,7 @@ export const DashboardRoutes: Routes = [
    },
    {
     path: 'players',
-    canActivate: [AuthguardGuard],
+    // canActivate: [AuthguardGuard],
     component: PlayersComponent,
     data: {
       title: 'Players',
@@ -60,11 +61,20 @@ export const DashboardRoutes: Routes = [
   },
   {
     path: 'stadiums',
-    canActivate: [AuthguardGuard],
+    // canActivate: [AuthguardGuard],
     component: StadiumsComponent,
     data: {
       title: 'Stadium',
       urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'stadium'}]
+    }
+  },
+  {
+    path: 'myprofile',
+    // canActivate: [AuthguardGuard],
+    component: MyprofileComponent,
+    data: {
+      title: 'Myprofile',
+      urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'myprofile'}]
     }
   }
     

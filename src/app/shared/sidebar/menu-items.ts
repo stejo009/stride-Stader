@@ -11,7 +11,8 @@ export const ROUTES: RouteInfo[] = [
             // { path: '/dashboard/payment', title: 'Payments', icon: 'mdi mdi-currency-usd', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
             // { path: '#', title: 'Logout', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
             { path: '/dashboard/players', title: 'Players', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
-            { path: '/dashboard/stadiums', title: 'Stadium', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] }
+            { path: '/dashboard/stadiums', title: 'Stadium', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/myprofile', title: 'Profile', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] }
         
         
     
