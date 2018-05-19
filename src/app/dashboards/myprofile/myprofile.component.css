@@ -1,3 +1,11 @@
 h3.username{
    margin-top: 25%;
 }
+.friends{
+    margin-top: 10px;
+    padding:10px;
+    border-left: 2px solid rgb(1, 87, 224);
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 4px;
+    margin:10px;
+}
