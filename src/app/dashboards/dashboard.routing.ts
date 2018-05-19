@@ -10,6 +10,9 @@ import { PlayersComponent } from './players/players.component';
 import { StadiumsComponent } from './stadiums/stadiums.component';
 export const DashboardRoutes: Routes = [
   {
+    path:'', redirectTo:'/signin',pathMatch:'full'
+  },
+  {
     path: '',
     children: [
     
@@ -37,7 +40,7 @@ export const DashboardRoutes: Routes = [
       component: PaymentComponent,
       data: {
         title: 'Payments',
-        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'payments'}]
+        urls: [{title: 'Dashboard',url: '/dashboard/payments'},{title: 'payments'}]
       }
     },
     {
@@ -55,7 +58,7 @@ export const DashboardRoutes: Routes = [
     component: PlayersComponent,
     data: {
       title: 'Players',
-      urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'players'}]
+      urls: [{title: 'Dashboard',url: '/dashboard/players'},{title: 'players'}]
     }
   },
   {

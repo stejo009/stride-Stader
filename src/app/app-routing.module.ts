@@ -15,7 +15,7 @@ export const routes: Routes = [
     path: '',
     component: FullComponent,
     children: [
-        { path: '', redirectTo: '/signin', pathMatch: 'full' },
+        { path: '', redirectTo: 'signin', pathMatch: 'full' },
         { path: 'dashboard', loadChildren: './dashboards/dashboard.module#DashboardModule' },
         { path: 'apps', loadChildren: './apps/apps.module#AppsModule' },    ]
 },

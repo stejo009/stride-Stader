@@ -47,26 +47,44 @@ displayStadium(){
     }
 
 
-public onFilterPitch(filter:string){
-  alert(filter);
+public onFilterPitch(pitch:any){
+  alert(pitch);
+
+  if(pitch.isActive) {
+    pitch.isActive = false;
+    this.removePitchType(pitch);
+    return;
+  }
+  pitch.isActive=true;
+  this.addPitchType(pitch);
+
+}
+addPitchType(pitch_type){
 
     for(let i = 0; i < Object.keys(this.stadium).length; i++) {
       let stadiumData = this.stadium[i];
 
-      if(stadiumData.pitch_type == filter ) {
-
-
+      if(stadiumData.pitch_type == pitch_type ) {
         this.newdata.push(stadiumData);
         console.log(this.newdata);
-       
     }
 }
 this.stadium=[];
-this.stadium.push(this.newdata);
+this.stadium = this.newdata;
 console.log("filterd data");
 console.log(this.stadium);
 
 }
+
+removePitchType(pitch_type){
+  alert('remove cars');
+}
+
+// filter city
+public onFilterCity(filter:string){
+
+}
+
 
 
 

@@ -14,7 +14,14 @@
                 <ul type="none">City<hr>
                     <li *ngFor = " let cityname of city" (click)="onFilterCity(cityname)" > {{cityname}}</li>
                 </ul>
+                <ul type="none"> Stadium Type<hr>
+                <li class="checkbox" *ngFor = " let pitch of pitch_type">
+                    <label><input type="checkbox" (click)="onFilterPitch(pitch)" [value]="pitch">{{pitch}}</label>
+                </li>
+                </ul>
+
                 <ul type="none"><br>
+                    <li ><button class="btn btn-primary">Search</button></li>
                     <li ><button class="btn btn-primary">Reset Filter</button></li>
                 </ul>
             </div>
