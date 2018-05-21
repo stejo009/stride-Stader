@@ -1,15 +1,15 @@
 <h4>Stadiums</h4>
-<div class="row">   
+<div class="row">
     <!-- filter div start -->
     <div class="col-md-3">
         <div class="card">
             <div class="card-body">
                 <ul type="none"> Filter<hr>
-                    <li (click)="ngOnInit()">All Games </li>
-                    <li class="checkbox" *ngFor="let data of cloneddata" (change)="onFilterGame(data.name)"> <input type="checkbox" value="">{{data.name}} </li>
+                    <li (click)="ngOnInit()"><input type="checkbox" (change)="onAllGames($event)" checked value="All Sports">All Sports </li>
+                    <li class="checkbox" *ngFor="let data of cloneddata" > <input type="checkbox" (change)="onfiltername($event, data.name)" value="{{data.name}}">{{data.name}} </li>
                 </ul>
                 <ul type="none"> Pitch Type<hr>
-                    <li *ngFor = " let data of pitchtype" (click)="onFilterPitch(data.id)"> {{data.pitch_type}} </li>
+                    <li *ngFor = " let data of pitchtype" ><input type="checkbox" (change)="onfiltername($event, data.name)" value="{{data.name}}"> {{data.pitch_type}} </li>
                 </ul>
                 <ul type="none">City<hr>
                     <li *ngFor = " let cityname of city" (click)="onFilterCity(cityname.id)" > {{cityname.name}}</li>
@@ -21,10 +21,11 @@
         </div>
     </div>
         <!--Filter div completed-->
+        
         <!-- all stadiums -->
         <div class="col-md-9">
             <div class="row">
-                <div class="col-4" *ngFor="let data of pagedItems">
+                <div class="col-4" *ngFor="let data of LiveFilter">
                     <div class="card">
                         <div class="card-body">
                             <img src = "https://d1u4oo4rb13yy8.cloudfront.net/article/54089-dtfgxjmbef-1490098402.jpg">
@@ -59,7 +60,7 @@
 
 
         </div>
-        <!-- all stadium complted --> 
+        <!-- all stadium complted -->
 
-       
+
 </div>

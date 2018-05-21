@@ -33,6 +33,8 @@ import { RestclientService } from '../restclient/restclient.service';
 import { StadiumsComponent } from './stadiums/stadiums.component';
 import { PlayersComponent } from './players/players.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { StadiumdetailsComponent } from './stadiums/stadiumdetails/stadiumdetails.component';
+import { BookstadiumComponent } from './stadiums/bookstadium/bookstadium.component';
 
 
 @NgModule({
@@ -44,19 +46,19 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
         ChartistModule,
         Ng2SmartTableModule,
         RouterModule.forChild(DashboardRoutes),
-        
+
     ],
     providers: [
         RestclientService
     ],
 	declarations: [
-     
+
         IncomeCounterComponent,
-        ProjectCounterComponent, 
-        ProjectComponent, 
+        ProjectCounterComponent,
+        ProjectComponent,
         RecentcommentComponent,
-        RecentmessageComponent, 
-        SocialSliderComponent, 
+        RecentmessageComponent,
+        SocialSliderComponent,
         TodoComponent,
         ProfileComponent,
         PageAnalyzerComponent,
@@ -73,7 +75,9 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
         OrdersComponent,
         StadiumsComponent,
         PlayersComponent,
-        MyprofileComponent
+        MyprofileComponent,
+        StadiumdetailsComponent,
+        BookstadiumComponent
     ]
 })
 export class DashboardModule { }
