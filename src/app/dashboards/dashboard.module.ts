@@ -44,19 +44,19 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
         ChartistModule,
         Ng2SmartTableModule,
         RouterModule.forChild(DashboardRoutes),
-        
+
     ],
     providers: [
         RestclientService
     ],
 	declarations: [
-     
+
         IncomeCounterComponent,
-        ProjectCounterComponent, 
-        ProjectComponent, 
+        ProjectCounterComponent,
+        ProjectComponent,
         RecentcommentComponent,
-        RecentmessageComponent, 
-        SocialSliderComponent, 
+        RecentmessageComponent,
+        SocialSliderComponent,
         TodoComponent,
         ProfileComponent,
         PageAnalyzerComponent,

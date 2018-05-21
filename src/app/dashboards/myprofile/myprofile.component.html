@@ -4,8 +4,8 @@
         <div class="col-md-4">
                 <div class="card">
                   <div class="card-body">
+                        <div class=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Saina_Nehwal_in_2011.jpg/220px-Saina_Nehwal_in_2011.jpg" alt="user" class="img-circle" width="100"></div>
                       <div class="d-flex flex-row">
-                          <div class=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Saina_Nehwal_in_2011.jpg/220px-Saina_Nehwal_in_2011.jpg" alt="user" class="img-circle" width="200"></div>
                           <div class="p-l-20">
                               <h3 class="font-medium username">{{myprofile.name}}</h3>
                               <h6>{{myprofile.email}}</h6>
@@ -61,7 +61,7 @@
                                             <form class="form-horizontal m-t-40">
                                                 <div class="form-group">
                                                     <label>edit name <span class="help"> </span></label>
-                                                    <input type="text" class="form-control" value="{{myprofile.name}}" name="{{myprofile.name}}">
+                                                    <input type="text" class="form-control" name="name">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="example-email">Email <span class="help"> e.g. "example@gmail.com"</span></label>
@@ -115,14 +115,7 @@
                                                 <h6>{{myprofile.email}}</h6>
                                                 <button class="btn btn-success"><i class="ti-plus"></i> Message</button>
                                             </div>
-                                    </div>   <div class="col-md-4 friends">
-                                            <div class=""><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Saina_Nehwal_in_2011.jpg/220px-Saina_Nehwal_in_2011.jpg" alt="user" class="img-circle" width="100"></div>
-                                            <div class="p-l-20">
-                                                <h3 class="font-medium">{{myprofile.name}}</h3>
-                                                <h6>{{myprofile.email}}</h6>
-                                                <button class="btn btn-success"><i class="ti-plus"></i> Message</button>
-                                            </div>
-                                    </div>      
+                                    </div>       
                             </div>
 
                     </ng-template>

@@ -1,6 +1,12 @@
+
 {
   "compileOnSave": false,
+
   "compilerOptions": {
+    // "target": "es5",
+    // "out": "js/script.js",
+    "watch": true,
+
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
@@ -17,3 +23,26 @@
     ]
   }
 }
+// {
+//   "target": "es5",
+//   "out": "js/script.js",
+//   "watch": true,
+  
+//   "compileOnSave": false,
+//   "compilerOptions": {
+//     "outDir": "./dist/out-tsc",
+//     "sourceMap": true,
+//     "declaration": false,
+//     "moduleResolution": "node",
+//     "emitDecoratorMetadata": true,
+//     "experimentalDecorators": true,
+//     "target": "es5",
+//     "typeRoots": [
+//       "node_modules/@types"
+//     ],
+//     "lib": [
+//       "es2017",
+//       "dom"
+//     ]
+//   }
+// }

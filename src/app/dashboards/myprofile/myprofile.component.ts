@@ -16,7 +16,7 @@ profilepic;
 password;
 birthdata;
   constructor(private http:Http, private serverService: RestclientService) { }
-  profiledata;
+  profiledata;myname;
   myprofile=[];
   ngOnInit() {
     console.log("Button Clicked");
@@ -31,13 +31,18 @@ birthdata;
       console.log("Req completed!");
     });
 }
-  
+ 
 
 displayPlayers(){
 this.profiledata;
-this.myprofile = this.profiledata.userDetails;    
+this.myprofile = this.profiledata.userDetails; 
+this.myname = this.myprofile;
+console.log(this.myprofile);
+console.log(this.myname);
 
   }
-
-
 }
+
+
+
+
