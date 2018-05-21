@@ -14,7 +14,7 @@ export class RestclientService {
     let headers = new Headers();
     headers.append('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     headers.append('Access-Control-Allow-Headers', 'session-variable');
-    headers.append('Access-Control-Allow-Methods', 'POST, OPTIONS');
+    headers.append('Access-Control-Allow-Methods', 'POST');
     headers.append('Access-Control-Allow-Origin', 'http://localhost:4200');
     headers.append('Access-Control-Allow-Credentials', 'true');
     this.options = new RequestOptions({headers: headers});
@@ -25,6 +25,7 @@ export class RestclientService {
     console.log("inside the client request functions");
     return  this.http.get("http://phplaravel-68825-370136.cloudwaysapps.com/api/allStadiums");
    }
+
 // getting all players data
    getPlayersData(){
     console.log("inside the client request functions");
@@ -34,25 +35,42 @@ export class RestclientService {
 // get profile data of user
    getMyprofileData(){
      return  this.http.get("http://phplaravel-68825-370136.cloudwaysapps.com/api/editProfile");
-
    }
+
+  //  post username and password request
+  postLoginData(body){
+    return this.http.post('http://phpstack-68825-403367.cloudwaysapps.com/testApi.php', JSON.stringify(body));
+   }
+
+      
+  //  post profile information request
+  postMyprofileData(body){
+    return this.http.post('http://phpstack-68825-403367.cloudwaysapps.com/testApi.php', JSON.stringify(body));
+   }
+ 
+  //  post registration data
+   postRegisterData(body){
+     console.log("Inside the restclient service");
+    return this.http.post('http://phplaravel-68825-370136.cloudwaysapps.com/api/register', JSON.stringify(body));
+   }
+
+}//Class Completed
+
+
+
+
 
 // Send get request for client payments data
-  getPaymentData(){
-    console.log("Inside the payment rest request function");
-    this.http.get("http://phpstack-68825-403367.cloudwaysapps.com/testApi.php")
-    .subscribe(data=>{
-    this.alldata = data.json();
-    console.log(this.alldata);  
-    }, err=>{
-      console.error("Error = " + err);
-    }, ()=>{
-      console.log("Req completed!");
-    });
-   }
-   
-  //  post username and password request
-  execPOSTRequest(body){
-    return this.http.post('http://phpstack-68825-403367.cloudwaysapps.com/testApi.php',JSON.stringify(body));
-   }
-}//Class Completed
+// getPaymentData(){
+//   console.log("Inside the payment rest request function");
+//   this.http.get("http://phpstack-68825-403367.cloudwaysapps.com/testApi.php")
+//   .subscribe(data=>{
+//   this.alldata = data.json();
+//   console.log(this.alldata);  
+//   }, err=>{
+//     console.error("Error = " + err);
+//   }, ()=>{
+//     console.log("Req completed!");
+//   });
+//  }
+ 

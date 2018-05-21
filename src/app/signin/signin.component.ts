@@ -32,7 +32,7 @@ export class SigninComponent implements OnInit {
       password : upass
   }
   // this function send request to restcli for send username and password
-  this.RestclientService.execPOSTRequest(body).subscribe(
+  this.RestclientService.postLoginData(body).subscribe(
       data => {
           this.responseMessage = data.json();
           console.log('SERVER RESPONSE: ' , data.toString);

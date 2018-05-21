@@ -45,7 +45,7 @@
             <!-- profile info block end -->
 
 <!-- profile information tab -->
-    <div class="col-md-6">
+    <div class="col-md-8">
         <div class="card">
             <div class="card-body">
                 <h3 class="card-title">Personal information</h3>
@@ -54,18 +54,22 @@
                   <ngb-tab title="Edit Profile">
                     <ng-template ngbTabContent>
                         <!-- Edit my profile block statrs -->
-                            <div class="row">
-                                    <div class="col-sm-12">
-                                        <div class="card card-body">
+                            <div class="row"> 
+                                    <div class="card card-body">
+                                        <div class="col-sm-6">
                                             <h4 class="card-title">Edit Personal information</h4>
                                             <form class="form-horizontal m-t-40">
                                                 <div class="form-group">
-                                                    <label>edit name <span class="help"> </span></label>
-                                                    <input type="text" class="form-control" value="{{myprofile.name}}" name="{{myprofile.name}}">
+                                                    <label>First name <span class="help"> </span></label>
+                                                    <input type="text" class="form-control" [(ngModel)]="name" name="myprofile">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Last name <span class="help"> </span></label>
+                                                    <input type="text" class="form-control" [(ngModel)]="name" name="myprofile">
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="example-email">Email <span class="help"> e.g. "example@gmail.com"</span></label>
-                                                    <input type="email" id="example-email" name="example-email" value="{{myprofile.email}}" class="form-control" placeholder="Email">
+                                                    <input type="email" id="example-email" [(ngModel)]="email" name="email" class="form-control" placeholder="Email">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Password</label>
@@ -89,6 +93,8 @@
                                          </form> 
                                         </div>
                                     </div>
+
+                                    
                                 </div>
                                 <!-- edit my profile block completed -->
                     </ng-template>
