@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgZone, Injector } from '@angular/core';
+import { Router } from '@angular/router'
 import { RestclientService } from '../../restclient/restclient.service';
 import { HttpClient } from '@angular/common/http';
 import{ Http, Headers,RequestOptions} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { PagerserviceService } from '../../services/pagerservice.service';
+import { AuthguardGuard } from '../../authguard.guard';
+import { DashboardRoutes } from '../dashboard.routing';
+import { AppRoutingModule } from '../../app-routing.module';
+import { ZoneService } from '../../services/zone.service';
 
 @Component({
   selector: 'app-stadiums',
@@ -20,19 +25,30 @@ export class StadiumsComponent implements OnInit {
   city;finaldata;
   pager: any = {};
   pagedItems: any[];
-  constructor(private http:Http, private serverService: RestclientService, private PagerserviceService: PagerserviceService) { }
+  newarrrays=[];  
+  arrayall=[];
+  contentEditable; LiveFilter=[];
+  constructor(
+    private http:Http,
+    private serverService: RestclientService, 
+    private PagerserviceService: PagerserviceService, 
+    private zone:NgZone, 
+    injector : Injector,
+    private router: Router,
+  private zoneservices:ZoneService) { }
 
  
   ngOnInit() {
     this.serverService.getStadiumData().subscribe(data=>{
       this.finaldata = data.json();
     this.alldata = data.json();
+    
     this.cloneddata = this.alldata.filter_sport;
     this.pitchtype = this.alldata.filter_pitch_types;
     this.city = this.alldata.filter_City;
 
     console.log("all data:");
-    
+    this.allgames();
     this.setPage(1);
 
     // this.displayStadium(); 
@@ -47,39 +63,128 @@ allgames(){
   this.stadium=this.finaldata.stadiums;
 }
 
+// this is for pagination
 setPage(page: number) {
 
   console.log(this.cloneddata.stadiums); 
   this.stadium = this.alldata.stadiums; 
   console.log(this.stadium);
       // get pager object from service
-      this.pager = this.PagerserviceService.getPager(this.stadium.length, page);
+      this.pager = this.PagerserviceService.getPager(this.LiveFilter.length, page);
       console.log(this.pager);
       // get current page of items
-      this.pagedItems = this.stadium.slice(this.pager.startIndex, this.pager.endIndex + 1);
+      this.pagedItems = this.LiveFilter.slice(this.pager.startIndex, this.pager.endIndex + 1);
   }
-  newarrrays=[];
-  
-arrayall=[];
-// Fikter by gane name
-onFilterGame(filter){
-this.arrayall.push(filter);
 
-  alert("selected game:" + filter);
-  for(let i = 0; i < Object.keys(this.stadium).length; i++) {
-          let stadiumData = this.stadium[i];
-    
-          if(stadiumData.name == this.arrayall) {
-            this.newdata.push(stadiumData);
-            console.log(this.newdata);
-        }
+  // this is for aonly all games
+  onAllGames(event){
+    if(event.target.checked){
+      this.LiveFilter = this.stadium;
     }
-    this.alldata = [];
-    this.pagedItems=[];
-    this.alldata = this.newdata;
-    this.pagedItems = this.newdata;
-    console.log("filterd data");
-    console.log(this.pagedItems);
-  
+    else{
+      this.LiveFilter=[];
+    }
+  }
+// <!***********************************SPORTS NAME FILTER**********************************************>
+
+  // filter start of sports
+  onfiltername(event, data){
+  alert("selected");
+    if (event.target.checked ) {
+      this.contentEditable = true;
+      this.addFilteredData(data);
+    }
+
+    else{
+      // alert("uncheked");
+      this.removeFilteredData(data);
+    }
+  }
+
+// add data when clicked checkbox is selected
+  addFilteredData(data){
+    for(let i = 0; i < Object.keys(this.stadium).length; i++) {
+      let Filterdata = this.stadium[i]; 
+      if(Filterdata.name == data || Filterdata.pitch_type == data) {
+        this.LiveFilter.push(Filterdata);
+          //  myNewList =  Array.from(new Set(Filterdata ));
+        console.log("live filter is main display filter");
+        console.log(this.LiveFilter);
+        
+
+      }
+    }
+  }
+
+  // delete data or check box is deselected
+  removeFilteredData(data){
+    for(let i = 0; i < Object.keys(this.stadium).length; i++) {
+      let chngeslive = this.stadium[i]; 
+
+      if(chngeslive.name == data || chngeslive.pitch_type == data) {
+        var index = this.LiveFilter.indexOf(chngeslive);
+        if (index !== -1) this.LiveFilter.splice(index, 1);
+        console.log("testing");
+        console.log(chngeslive);
+        console.log("another  Live filter");
+        console.log(this.LiveFilter);
+      }
   }
 }
+
+// <!***********************************Pitch type  FILTER**********************************************>
+
+// pitch type filter starts
+onfilterPitchtype(event, data){
+  alert("selected");
+    if (event.target.checked ) {
+      this.contentEditable = true;
+      this.addFilteredPitchtypeData(data);
+    }
+
+    else{
+      // alert("uncheked");
+      this.removeFilteredPitchtypeData(data);
+    }
+  }
+
+// add data when clicked checkbox is selected
+addFilteredPitchtypeData(data){
+    for(let i = 0; i < Object.keys(this.LiveFilter).length; i++) {
+      let Filterdata = this.LiveFilter[i]; 
+      if(Filterdata.name == data || Filterdata.pitch_type == data) {
+        this.LiveFilter.push(Filterdata);
+          //  myNewList =  Array.from(new Set(Filterdata ));
+        console.log("live filter is main display filter");
+        console.log(this.LiveFilter);
+        
+
+      }
+    }
+  }
+
+  // delete data or check box is deselected
+  removeFilteredPitchtypeData(data){
+    for(let i = 0; i < Object.keys(this.LiveFilter).length; i++) {
+      let chngeslive = this.LiveFilter[i]; 
+
+      if(chngeslive.name == data || chngeslive.pitch_type == data) {
+        var index = this.LiveFilter.indexOf(chngeslive);
+        if (index !== -1) this.LiveFilter.splice(index, 1);
+        console.log("testing");
+        console.log(chngeslive);
+        console.log("another  Live filter");
+        console.log(this.LiveFilter);
+      }
+  }
+}
+
+
+// ******************** stadium details **********************
+
+onStadiumDetails(data){
+alert(data);
+this.zoneservices.navigate('/dashboard/stadiumdetails', data);
+}
+
+} //class completd

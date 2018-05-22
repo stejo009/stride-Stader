@@ -15,13 +15,17 @@ email;
 profilepic;
 password;
 birthdata;
+city;responseMessage;
+
   constructor(private http:Http, private serverService: RestclientService) { }
-  profiledata;myname;
+  profiledata;
   myprofile=[];
+ 
   ngOnInit() {
     console.log("Button Clicked");
     this.serverService.getMyprofileData().subscribe(data=>{
     this.profiledata = data.json();
+    this.myprofile = this.profiledata.userDetails;
     console.log("inside the response");
     console.log(this.profiledata.userDetails);  
     this.displayPlayers();
@@ -31,18 +35,40 @@ birthdata;
       console.log("Req completed!");
     });
 }
- 
+  
 
 displayPlayers(){
 this.profiledata;
-this.myprofile = this.profiledata.userDetails; 
-this.myname = this.myprofile;
-console.log(this.myprofile);
-console.log(this.myname);
+this.name = this.profiledata.userDetails.name;    
+this.email = this.profiledata.userDetails.email;
+
+  }
+
+  onsubmit(){
+    this.name;
+    this.email;
+    let body = [this.name, this.email];
+    console.log(this.name + this.email );
+    console.log("all edit form data");
+    console.log(body);
+
+    this.serverService.postMyprofileData(body).subscribe(
+      data => {
+          this.responseMessage = data.json();
+          console.log('SERVER RESPONSE: ' , data.toString);
+          console.log('SERVER RESPONSE: ' , this.responseMessage);
+          // if this function is execute that means password corret and response execute
+      },
+      err => {
+        //show user authentication is failed
+          console.log(err);
+          // dialogRef.close();
+          // super.showAlert("Wrong username or password!");
+      },
+      () => {
+          console.log('Login service completed');             
+      }
+  ); 
 
   }
 }
-
-
-
-

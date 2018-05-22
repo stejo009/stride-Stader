@@ -12,8 +12,9 @@ export const ROUTES: RouteInfo[] = [
             // { path: '#', title: 'Logout', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
             { path: '/dashboard/players', title: 'Players', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
             { path: '/dashboard/stadiums', title: 'Stadium', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
-            { path: '/dashboard/myprofile', title: 'Profile', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] }
-        
+            { path: '/dashboard/myprofile', title: 'Profile', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/booking', title: 'Booking', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] },
+            { path: '/dashboard/stadiumdetails', title: 'Stadium Details', icon: ' mdi mdi-account-plus', class: '', label: '', labelClass: '', extralink: false, submenu: [] }
         
     
 

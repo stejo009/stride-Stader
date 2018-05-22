@@ -9,10 +9,9 @@ import { OrdersComponent } from './orders/orders.component';
 import { PlayersComponent } from './players/players.component';
 import { StadiumsComponent } from './stadiums/stadiums.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { StadiumdetailsComponent } from './stadiumdetails/stadiumdetails.component';
+import { BookingComponent } from './booking/booking.component';
 export const DashboardRoutes: Routes = [
-  {
-    path:'', redirectTo:'/signin',pathMatch:'full'
-  },
   {
     path: '',
     children: [
@@ -41,7 +40,7 @@ export const DashboardRoutes: Routes = [
       component: PaymentComponent,
       data: {
         title: 'Payments',
-        urls: [{title: 'Dashboard',url: '/dashboard/payments'},{title: 'payments'}]
+        urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'payments'}]
       }
     },
     {
@@ -59,7 +58,7 @@ export const DashboardRoutes: Routes = [
     component: PlayersComponent,
     data: {
       title: 'Players',
-      urls: [{title: 'Dashboard',url: '/dashboard/players'},{title: 'players'}]
+      urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'players'}]
     }
   },
   {
@@ -78,6 +77,24 @@ export const DashboardRoutes: Routes = [
     data: {
       title: 'Myprofile',
       urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'myprofile'}]
+    }
+  }  ,
+  {
+    path: 'booking',
+    // canActivate: [AuthguardGuard],
+    component: BookingComponent,
+    data: {
+      title: 'Booking',
+      urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'booking'}]
+    }
+  },
+  {
+    path: 'stadiumdetails',
+    // canActivate: [AuthguardGuard],
+    component: StadiumdetailsComponent,
+    data: {
+      title: 'Stadium Details',
+      urls: [{title: 'Dashboard',url: '/dashboard'},{title: 'stadiumdetails'}]
     }
   }
     

@@ -9,13 +9,14 @@ import { SignupComponent } from './signup/signup.component';
 
 export const routes: Routes = [
 {
-     path: '', redirectTo: '/dashboard/home', pathMatch: 'full' 
+     path: '', redirectTo:'/dashboard/home' , pathMatch: 'full' 
 },
+//  '/signin'
 {
     path: '',
     component: FullComponent,
     children: [
-        { path: '', redirectTo: 'signin', pathMatch: 'full' },
+        { path: '', redirectTo: '/signin', pathMatch: 'full' },
         { path: 'dashboard', loadChildren: './dashboards/dashboard.module#DashboardModule' },
         { path: 'apps', loadChildren: './apps/apps.module#AppsModule' },    ]
 },

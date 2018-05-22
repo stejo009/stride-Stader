@@ -30,6 +30,7 @@ import { AuthguardGuard } from './authguard.guard';
 import { LoginService } from './services/login.service';
 import { SignupComponent } from './signup/signup.component';
 import { PagerserviceService } from './services/pagerservice.service';
+import { ZoneService } from './services/zone.service';
 const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
   suppressScrollX: true,
   wheelSpeed: 2,
@@ -69,6 +70,7 @@ const DEFAULT_PERFECT_SCROLLBAR_CONFIG: PerfectScrollbarConfigInterface = {
     LoginService,
     AuthguardGuard,
     PagerserviceService,
+    ZoneService,
       {
       provide: PERFECT_SCROLLBAR_CONFIG,
       useValue: DEFAULT_PERFECT_SCROLLBAR_CONFIG

@@ -10,7 +10,13 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  ngOnInit(){
+
+  
+
+  constructor() {
     
+  }
+  ngOnInit(){
+
   }
 }

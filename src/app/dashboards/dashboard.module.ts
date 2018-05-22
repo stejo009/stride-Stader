@@ -33,6 +33,8 @@ import { RestclientService } from '../restclient/restclient.service';
 import { StadiumsComponent } from './stadiums/stadiums.component';
 import { PlayersComponent } from './players/players.component';
 import { MyprofileComponent } from './myprofile/myprofile.component';
+import { StadiumdetailsComponent } from './stadiumdetails/stadiumdetails.component';
+import { BookingComponent } from './booking/booking.component';
 
 
 @NgModule({
@@ -73,7 +75,11 @@ import { MyprofileComponent } from './myprofile/myprofile.component';
         OrdersComponent,
         StadiumsComponent,
         PlayersComponent,
-        MyprofileComponent
+        MyprofileComponent,
+        StadiumdetailsComponent,
+        BookingComponent,
+        
+        
     ]
 })
 export class DashboardModule { }
